@@ -1,0 +1,33 @@
+name: KeyManager
+version: '${project.version}'
+main: fr.keymanager.KeyManager
+api-version: '1.20'
+author: RayZens
+description: Plugin de gestion de groupes de blocs par position.
+
+commands:
+  creategroup:
+    description: Crée un nouveau groupe de blocs.
+    usage: /creategroup <nom_du_groupe>
+    permission: plugin.creategroup
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
+  addblock:
+    description: Ajoute le bloc que vous regardez au groupe spécifié.
+    usage: /addblock <nom_du_groupe>
+    permission: plugin.addblock
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
+  removeblock:
+    description: Retire le bloc que vous regardez du groupe spécifié.
+    usage: /removeblock <nom_du_groupe>
+    permission: plugin.removeblock
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
+  givekey:
+    description: Donne une plume permettant d'interagir avec les blocs d'un groupe.
+    usage: /givefeather <nom_du_groupe>
+    permission: plugin.givefeather
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.
+  listgroup:
+    description: Affiche la liste des groupes
+    usage: /listgroup
+    permission: plugin.listgroup
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande.

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KeyManager">
+    <output-path>$PROJECT_DIR$/../servertest1.20.1/plugins</output-path>
+    <root id="archive" name="KeyManager.jar">
+      <element id="module-output" name="KeyManager" />
+    </root>
+  </artifact>
+</component>

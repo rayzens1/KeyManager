@@ -1,0 +1,4 @@
+key_item:
+  id: "feather"   # ID de l'item
+  custom_model_data: 10579  # CustomModelData de l'item
+  name: "key"    # Nom de l'item
