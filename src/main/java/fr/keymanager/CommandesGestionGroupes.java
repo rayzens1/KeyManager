@@ -173,7 +173,7 @@ public class CommandesGestionGroupes implements CommandExecutor, Listener {
         if (groupName == null) return; // Le bloc n'est dans aucun groupe
 
         // Vérifier si le joueur a une plume "key" avec le bon nom de groupe dans le lore
-        if (!hasCorrectKey(player, groupName)) {
+        if (!hasCorrectKey(player, groupName) && !player.hasPermission("plugin.bypassdoor")) {
             player.sendMessage(ChatColor.RED + "Vous ne pouvez pas interagir avec ce bloc sans la clé du groupe " + groupName + ".");
             event.setCancelled(true);
         }
@@ -182,7 +182,10 @@ public class CommandesGestionGroupes implements CommandExecutor, Listener {
     private boolean hasCorrectKey(Player player, String groupName) {
         ItemStack itemInHand = player.getInventory().getItemInMainHand(); // Obtenir l'item tenu en main
 
-        if (itemInHand != null && itemInHand.getType() == Material.FEATHER && itemInHand.hasItemMeta()) {
+        String id = plugin.getConfig().getString("key_item.id");
+        Material material = Material.getMaterial(id.toUpperCase()); // Obtenir le type d'item à partir de l'id
+
+        if (itemInHand != null && itemInHand.getType() == material && itemInHand.hasItemMeta()) {
             ItemMeta meta = itemInHand.getItemMeta();
             // Vérifier que l'item a le nom "key" et le groupe correct dans le lore
             return meta.hasLore() && meta.getLore().contains(groupName);

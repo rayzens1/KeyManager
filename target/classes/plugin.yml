@@ -23,7 +23,7 @@ commands:
     permission-message: Vous n'avez pas la permission d'utiliser cette commande.
   givekey:
     description: Donne une plume permettant d'interagir avec les blocs d'un groupe.
-    usage: /givefeather <nom_du_groupe>
+    usage: /givekey <nom_du_groupe>
     permission: plugin.givefeather
     permission-message: Vous n'avez pas la permission d'utiliser cette commande.
   listgroup:
@@ -31,3 +31,7 @@ commands:
     usage: /listgroup
     permission: plugin.listgroup
     permission-message: Vous n'avez pas la permission d'utiliser cette commande.
+
+permissions:
+  plugin.bypassdoor:
+    description: "Permet de contourner les restrictions sur les portes"
